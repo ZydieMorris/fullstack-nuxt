@@ -1,13 +1,29 @@
 <template>
   <div>
-    <Button>Hello</Button>
-    <p class="font-roboto">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias quam
-      tempora consequatur. Excepturi non delectus voluptatibus aperiam at
-      assumenda voluptatum veritatis, sapiente voluptates ex consequatur sint
-      distinctio molestias id neque.
-    </p>
+    <ul v-for="fruit in data?.database">
+      <li>{{ fruit }}</li>
+    </ul>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+const { data } = await useFetch('/api/hello', {
+  method: 'GET'
+})
+const person = {
+  name: 'dsadsa',
+  age: 2,
+  // .....
+  password: 'xdasdsdas',
+  dateOfBirth: 'dasdas',
+  someSecrets: "dasdasdsa"
+}
+
+
+const {name : fullName} = person;
+
+
+
+
+</script>
